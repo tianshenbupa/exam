@@ -2,10 +2,6 @@
 树的遍历
 六种方法：递归，非递归
 """
-
-
-
-
 #前序遍历
 class TreeNode:
       def _init_(self,x):
