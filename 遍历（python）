@@ -62,7 +62,7 @@ def post_order(root):
       while cur or s:
             while cur:
                   s.append(cur)
-                  root=root.left
+                  cur=cur.left
       cur=s.pop()
       if not cur.right or cur.right!=pre:
             res.append(cur.val)
