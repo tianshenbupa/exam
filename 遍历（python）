@@ -3,6 +3,7 @@
 六种方法：递归，非递归
 """
 #前序遍历
+```python
 class TreeNode:
       def _init_(self,x):
           self.val=x
@@ -27,6 +28,7 @@ def pre_order(root):
                   p=s.pop()
                   p=p.right
      return res 
+```
     
    #中序遍历
    
