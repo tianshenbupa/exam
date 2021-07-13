@@ -16,6 +16,39 @@ def pre_order(root):
     print(root.val)
     pre_order(root.left)
     pre_order(root.right)
+    
+   
+def pre_order(root):
+      if not root:return 
+      res,s,p=[],[],root
+      while p or s:
+            while p:
+                  res.append(p.val)
+                  s.append(p)
+                  p=p.left
+            if s:
+                  p=s.pop()
+                  p=p.right
+     return res 
+    
+   #中序遍历
+   def mid_order(root):
+         mid_order(root.left)
+         print(root.val)
+         mid_order(root.right)
+         
+  def mid_order(root):
+      if not root: return 
+      res,s,p=[],[],root
+      while s or p:
+            while p:
+                  s.append(p)
+                  p=p.left
+            if s: 
+                  p=s.pop()
+                  res.append(p.val)
+                  p=p.right
+      return res
 
           
           
