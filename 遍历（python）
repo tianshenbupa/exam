@@ -60,7 +60,7 @@ def post_order(root):
       if not root:return
       cur,pre,res,s=root,None,[],[]
       while cur or s:
-            while root:
+            while cur:
                   s.append(cur)
                   root=root.left
       cur=s.pop()
