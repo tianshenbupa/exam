@@ -50,7 +50,33 @@ def pre_order(root):
                   p=p.right
       return res
 
-          
+#后序遍历
+def post_order(root):
+      post_order(root.left)
+      post_order(root.right)
+      print(root.val)
+      
+ def post_order(root):
+      if not root:return
+      cur,pre,res,s=root,None,[],[]
+      while cur or s:
+            while root:
+                  s.append(cur)
+                  root=root.left
+      cur=s.pop()
+      if not cur.right or cur.right!=pre:
+            res.append(cur.val)
+            pre=cur
+            cur=None
+      else:
+            s.append(cur)
+            cur=cur.right
+     return res
+            
+      
+      
+      
+_
           
  
   
