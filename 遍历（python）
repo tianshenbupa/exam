@@ -30,18 +30,18 @@ def pre_order(root):
     
    #中序遍历
    
-   class TreeNode:
+class TreeNode:
       def _init_(self,x):
           self.val=x
           self.left=None
           self.right=None
           
-   def mid_order(root):
+def mid_order(root):
          mid_order(root.left)
          print(root.val)
          mid_order(root.right)
          
-  def mid_order(root):
+def mid_order(root):
       if not root: return 
       res,s,p=[],[],root
       while s or p:
@@ -68,7 +68,7 @@ def post_order(root):
       post_order(root.right)
       print(root.val)
       
- def post_order(root):
+def post_order(root):
       if not root:return
       cur,pre,res,s=root,None,[],[]
       while cur or s:
