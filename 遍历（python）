@@ -4,13 +4,14 @@
 """
 
 
+
+
+#前序遍历
 class TreeNode:
       def _init_(self,x):
           self.val=x
           self.left=None
           self.right=None
-
-#前序遍历
 
 def pre_order(root):
     print(root.val)
@@ -32,6 +33,13 @@ def pre_order(root):
      return res 
     
    #中序遍历
+   
+   class TreeNode:
+      def _init_(self,x):
+          self.val=x
+          self.left=None
+          self.right=None
+          
    def mid_order(root):
          mid_order(root.left)
          print(root.val)
@@ -51,6 +59,14 @@ def pre_order(root):
       return res
 
 #后序遍历
+
+class TreeNode:
+      def _init_(self,x):
+          self.val=x
+          self.left=None
+          self.right=None
+      
+      
 def post_order(root):
       post_order(root.left)
       post_order(root.right)
