@@ -57,4 +57,63 @@ def shellSort(arr):
 }
 ```
 
+归并排序
+
+```
+def mergeSort(arr):
+    import math
+    if(len(arr)<2):
+        return arr
+    middle = math.floor(len(arr)/2)
+    left, right = arr[0:middle], arr[middle:]
+    return merge(mergeSort(left), mergeSort(right))
+
+def merge(left,right):
+    result = []
+    while left and right:
+        if left[0] <= right[0]:
+            result.append(left.pop(0));
+        else:
+            result.append(right.pop(0));
+    while left:
+        result.append(left.pop(0));
+    while right:
+        result.append(right.pop(0));
+    return result
+
+```
+
+堆排序
+```
+def buildMaxHeap(arr):
+    import math
+    for i in range(math.floor(len(arr)/2),-1,-1):
+        heapify(arr,i)
+
+def heapify(arr, i):
+    left = 2*i+1
+    right = 2*i+2
+    largest = i
+    if left < arrLen and arr[left] > arr[largest]:
+        largest = left
+    if right < arrLen and arr[right] > arr[largest]:
+        largest = right
+
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, largest)
+
+
+
+def heapSort(arr):
+    global arrLen
+    arrLen = len(arr)
+    buildMaxHeap(arr)
+    for i in range(len(arr)-1,0,-1):
+        arr[i], arr[0] = arr[0], arr[i]
+        arrLen -=1
+        heapify(arr, 0)
+    return arr
+
+
 ```
