@@ -1,0 +1,13 @@
+def binary_search(list, key):
+    length = len(list)
+    first = 0
+    last = length - 1
+    while first <= last:
+        mid = (last + first) // 2
+        if list[mid] > key:
+            last = mid - 1
+        elif list[mid] < key:
+            first = mid + 1
+        else:
+            return mid
+    return False
