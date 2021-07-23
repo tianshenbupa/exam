@@ -119,28 +119,33 @@ def heapSort(arr):
 ```
 快排
 ```
-def quickSort(arr, left=None, right=None):
-    left = 0 if not isinstance(left,(int, float)) else left
-    right = len(arr)-1 if not isinstance(right,(int, float)) else right
-    if left < right:
-        partitionIndex = partition(arr, left, right)
-        quickSort(arr, left, partitionIndex-1)
-        quickSort(arr, partitionIndex+1, right)
-    return arr
-
-def partition(arr, left, right):
-    pivot = left
-    index = pivot+1
-    i = index
-    while  i <= right:
-        if arr[i] < arr[pivot]:
-            swap(arr, i, index)
-            index+=1
-        i+=1
-    swap(arr,pivot,index-1)
-    return index-1
-
-def swap(arr, i, j):
-    arr[i], arr[j] = arr[j], arr[i]
+def partition(arr,left,right): 
+    i = ( left-1 )   # 最小元素索引
+    pivot = arr[right]     
+  
+    for j in range(left , right):   
+        # 当前元素小于或等于 pivot 
+        if   arr[j] <= pivot: 
+        
+            i = i+1 
+            arr[i],arr[j] = arr[j],arr[i] 
+  
+    arr[i+1],arr[right] = arr[right],arr[i+1] 
+    return ( i+1 ) 
+  
+ 
+# arr[] --> 排序数组
+# low  --> 起始索引
+# high  --> 结束索引
+  
+# 快速排序函数
+def quickSort(arr,left,right): 
+    if left < right: 
+  
+        pi = partition(arr,left,right) 
+  
+        quickSort(arr, left, pi-1) 
+        quickSort(arr, pi+1, right) 
+  
 
 ```
