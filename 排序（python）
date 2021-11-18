@@ -13,11 +13,11 @@ def sort(arr):
 ```
 def sort(arr):
     for i in range(len(arr)):
-        m_index=i
+        min_index=i
         for j in range(i,len(arr)):
-            if arr[j]<arr[m_index]:
-                m_index=j
-        arr[j],arr[m_index]=arr[m_index],arr[j]
+            if arr[j]<arr[min_index]:
+                min_index=j
+        arr[j],arr[min_index]=arr[min_index],arr[j]
         
      return arr   
 
