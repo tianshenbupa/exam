@@ -16,8 +16,11 @@ def sort(arr):
         min_index=i
         for j in range(i,len(arr)):
             if arr[j]<arr[min_index]:
-                min_index=j
-        arr[j],arr[min_index]=arr[min_index],arr[j]
+                min_index=j #得到最小值的下标
+        
+        #把最小值放在前面
+        arr[i],arr[min_index]=arr[min_index],arr[i]
+        
         
      return arr   
 
