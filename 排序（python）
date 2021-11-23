@@ -123,7 +123,7 @@ def heapSort(arr):
 快排
 ```
 def partition(arr,left,right): 
-    i = ( left-1 )   # 最小元素索引
+    i =  left-1    # 最小元素索引
     pivot = arr[right]     
   
     for j in range(left , right):   
@@ -134,7 +134,7 @@ def partition(arr,left,right):
             arr[i],arr[j] = arr[j],arr[i] 
   
     arr[i+1],arr[right] = arr[right],arr[i+1] 
-    return ( i+1 ) 
+    return  i+1  
   
  
 # arr[] --> 排序数组
